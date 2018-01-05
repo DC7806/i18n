@@ -27,6 +27,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # gem 'rails-i18n'
 gem 'i18n-active_record', require: 'i18n/active_record'
+gem 'mobility', '~> 0.3.6'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
