@@ -1,10 +1,10 @@
 class TranslationsController < ApplicationController
   def index
-    @translations = Translation.all
+    @translations = Translation.all.group_by(&:key).to_a.first.second
   end
 
   def edit
-    @translation = Translation.all.group_by(&key)
+    @translation = Translation.group_by(&:key)
   end
 
   def update

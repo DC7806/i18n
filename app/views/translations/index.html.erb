@@ -1,20 +1,16 @@
 <h1>Translation Table</h1>
 
 <table>
-  <tbody>
-    <% @translations.each do |translation| %>  
-    <tr>
-      <td><%= translation.locale %></td>
-      <td><%= translation.key %></td>
-      <td><%= translation.value %></td>
-      <td>
-        <%= form_for translation do |f| %>
-        <%= f.text_field :value %>
-        <%= f.submit "Submit" %>
-        <% end %>
-      </td>
-      <!-- <td><%#= form_tag "translations/#{translation.id}", method: :put %></td> -->
-    </tr> 
-    <% end %>    
+  <tbody> 
+    <% @translations.each do |translation| %>
+      <tr>
+        <td><%= translation.locale %></td>
+        <td><%= form_for translation do |f| %>
+            <%= f.text_field :value %>
+            <%= f.submit %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %> 
   </tbody>
 </table>

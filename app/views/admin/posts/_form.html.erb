@@ -1,0 +1,30 @@
+<%#= form_for admin_post do |f| %>
+  <div class="field">
+    <%#= f.label :title %>
+    <%#= f.text_field :"title" %>
+  </div>
+
+  <div class="field">
+    <%#= f.label :body %>
+    <%#= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%#= f.submit %>
+  </div>
+<% #end %>
+
+<%= form_for admin_post do |f| %>
+  <% I18n.available_locales.each do |locale| %>
+    <div>
+      <% title = "title_#{Mobility.normalize_locale(locale)}" %>
+      <% body  = "body_#{Mobility.normalize_locale(locale)}" %>
+      <%= f.label title %>
+      <%= f.text_field title %>
+      <%= f.label body %>
+      <%= f.text_area body %>
+    </div>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
