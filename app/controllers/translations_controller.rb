@@ -1,6 +1,10 @@
 class TranslationsController < ApplicationController
   def index
-    @translations = Translation.all.group_by(&:key).to_a.first.second
+    @indexing = Translation.where(locale: "zh-TW")
+    @translates = Translation.all
+    @translations = Translation.all
+    @groups = Translation.all.group_by(&:key).to_a.first.second
+    # @translations = Translation.all.group_by(&:key).to_a.first.second
   end
 
   def edit

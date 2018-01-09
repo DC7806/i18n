@@ -2,3 +2,4 @@ en:
   posts:
     index:
       posts: "default"
+      h2: "h2 from yml en"

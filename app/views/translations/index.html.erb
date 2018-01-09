@@ -1,7 +1,9 @@
 <h1>Translation Table</h1>
 
 <table>
-  <tbody> 
+  <tbody>
+   <!-- TODO: print out all the key first and use that as argument to create groups -->
+
     <% @translations.each do |translation| %>
       <tr>
         <td><%= translation.locale %></td>
@@ -14,3 +16,15 @@
     <% end %> 
   </tbody>
 </table>
+
+<% @indexing.each do |t| %>
+  <%= t.key %>
+  <%# Translation.where(key: t.key).each do |translate| %>
+  <%# Translation.select_key(t.key).each do |translate| %>
+  <% @translations.select_key(t.key).each do |translate| %>
+    <%= form_for translate do |f| %>
+    <%= f.text_field :value %>
+    <%= f.submit %>
+    <% end %>
+  <% end %>
+<% end %>
